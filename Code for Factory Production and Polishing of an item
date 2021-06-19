@@ -1,0 +1,33 @@
+#PROBLEM STATEMENT:
+#One item has to be produced first
+#Then it can go for polishing step 
+#While producing the items, next item can be produced only after passing it for polishing step
+
+#CODE:
+#user input for number of items
+
+N= int(input())
+
+#Production time input for items
+
+S= list(map(int,input().split()))
+
+#Polishing time input for items
+
+T= list(map(int,input().split()))
+
+sum= S[0]+ T[N-1]
+
+if N>0:
+
+    for i in range(0,N-1):
+
+        if S[i+1]>=T[i]:
+
+            sum+= S[i+1]
+
+        elif S[i+1]<T[i]:
+
+            sum+= T[i]
+
+print(sum)
